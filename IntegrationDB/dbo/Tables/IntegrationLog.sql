@@ -1,11 +1,11 @@
 ﻿CREATE TABLE [dbo].[IntegrationLog] (
-    [Id]              BIGINT           IDENTITY (1, 1) NOT NULL,
-    [TaskId]          UNIQUEIDENTIFIER NULL,
+    [IntegrationLogId]              BIGINT           IDENTITY (1, 1) NOT NULL,
+    [SourceObjectId]          UNIQUEIDENTIFIER NULL,
     [ErrorMessage]    VARCHAR (500)    NULL,
     [IntegrationDate] DATETIME2 (7)    NULL,
     [IsSuccess]       BIT              NULL,
-    PRIMARY KEY CLUSTERED ([Id] ASC),
-    FOREIGN KEY ([TaskId]) REFERENCES [dbo].[Tasks] ([SourceSystemId])
+    PRIMARY KEY CLUSTERED ([IntegrationLogId] ASC),
+    FOREIGN KEY ([SourceObjectId]) REFERENCES [dbo].[Tasks] ([SourceObjectId])
 );
 
 

@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[Queue] (
-    [SourceSystemId] UNIQUEIDENTIFIER NOT NULL,
-    PRIMARY KEY CLUSTERED ([SourceSystemId] ASC)
+    [SourceObjectId] UNIQUEIDENTIFIER NOT NULL,
+    PRIMARY KEY CLUSTERED ([SourceObjectId] ASC)
 );
 
