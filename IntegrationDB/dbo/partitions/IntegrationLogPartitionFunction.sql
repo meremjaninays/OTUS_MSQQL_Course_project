@@ -1,0 +1,2 @@
+﻿CREATE PARTITION FUNCTION IntegrationLogPartitionFunction (Datetime2) 
+AS RANGE LEFT FOR VALUES ('20220701')

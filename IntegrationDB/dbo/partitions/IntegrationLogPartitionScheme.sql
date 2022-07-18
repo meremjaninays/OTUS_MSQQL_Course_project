@@ -1,0 +1,3 @@
+﻿CREATE PARTITION SCHEME IntegrationLogPartitionScheme
+AS PARTITION IntegrationLogPartitionFunction
+TO (IntegrationDBLogArch,IntegrationDBLogCurrent)

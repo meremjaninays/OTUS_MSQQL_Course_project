@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[IntegrationLog] (
+﻿CREATE TABLE [dbo].[IntegrationLogArch] (
     [IntegrationLogId]              BIGINT           IDENTITY (1, 1) NOT NULL,
     [SourceTaskId]          UNIQUEIDENTIFIER NULL,
     [ErrorMessage]    VARCHAR (500)    NULL,
@@ -7,11 +7,10 @@
     FOREIGN KEY ([SourceTaskId]) REFERENCES [dbo].[Tasks] ([SourceTaskId])
 );
 GO
-ALTER TABLE [dbo].[IntegrationLog] ADD CONSTRAINT PK_IntegrationLog PRIMARY KEY Clustered (IntegrationLogId, IntegrationDate)
+ALTER TABLE [dbo].[IntegrationLogArch] ADD CONSTRAINT PK_IntegrationLogArch PRIMARY KEY Clustered (IntegrationLogId, IntegrationDate)
 ON IntegrationLogPartitionScheme (IntegrationDate)
 
 
 GO
 CREATE NONCLUSTERED INDEX [IX_ErrorDate]
-    ON [dbo].[IntegrationLog]([IntegrationDate] ASC);
-
+    ON [dbo].[IntegrationLogArch]([IntegrationDate] ASC);

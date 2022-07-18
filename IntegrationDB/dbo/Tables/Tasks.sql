@@ -1,13 +1,13 @@
 ﻿CREATE TABLE [dbo].[Tasks] (
-    [SourceObjectId]  UNIQUEIDENTIFIER NOT NULL,
-    [TargetObjectId]  BIGINT           NULL,
+    [SourceTaskId]  UNIQUEIDENTIFIER NOT NULL,
+    [TargetPackageId]  BIGINT           NULL,
     [IntegrationDate] DATETIME2 (7)    NULL,
-    PRIMARY KEY CLUSTERED ([SourceObjectId] ASC)
+    PRIMARY KEY CLUSTERED ([SourceTaskId] ASC)
 );
 
 
 GO
 CREATE NONCLUSTERED INDEX [IX_SourceSystemId]
-    ON [dbo].[Tasks]([SourceObjectId] ASC)
-    INCLUDE([TargetObjectId]);
+    ON [dbo].[Tasks]([SourceTaskId] ASC)
+    INCLUDE([TargetPackageId]);
 
